@@ -36,5 +36,5 @@
   "deploy": "gh-pages -d dist",
   "preview": "vite preview"
 },
-  "homepage": "https://github.com/porcescostanislav/smartstock-landing"
+  "homepage": "https://github.io/porcescostanislav/smartstock-landing"
 }

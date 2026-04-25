@@ -39,20 +39,20 @@ function App() {
 
   return (
     <div style={styles.appContainer}>
-      {/* Navbar - Minimalist */}
+      {/* Navigation / Header */}
       <nav style={styles.navbar}>
         <div style={styles.navLogo}>
-          <LayoutDashboard size={20} color="var(--accent)" />
-          <span style={styles.logoText}>SmartStock AI</span>
+          <LayoutDashboard size={22} color="var(--accent)" />
+          <span style={{ fontWeight: 700, letterSpacing: '0.5px' }}>SmartStock AI</span>
         </div>
         <button onClick={() => setIsDark(!isDark)} style={styles.themeToggle}>
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          {isDark ? <Sun size={20} /> : <Moon size={20} />}
         </button>
       </nav>
 
       {/* Main Content */}
       <main style={styles.main}>
-        {/* Hero Section - Acum foloseste culorile temei */}
+        {/* Hero */}
         <section style={styles.hero}>
           <h1 style={styles.heroTitle}>SmartStock AI</h1>
           <p style={styles.heroSubtitle}>
@@ -67,17 +67,17 @@ function App() {
         {/* Features Grid */}
         <section style={styles.grid}>
           <FeatureCard 
-            icon={<Cpu size={22} />} 
+            icon={<Cpu size={24} />} 
             title="Inteligență Artificială" 
             desc="Interogare în limbaj natural (Text-to-SQL) și prognoză bazată pe modele DeepSeek/Claude." 
           />
           <FeatureCard 
-            icon={<BarChart3 size={22} />} 
+            icon={<BarChart3 size={24} />} 
             title="Analiză Econometrică" 
             desc="Optimizare stocuri prin modelul EOQ și regresie OLS pentru predicția cererii." 
           />
           <FeatureCard 
-            icon={<Database size={22} />} 
+            icon={<Database size={24} />} 
             title="Gestiune Robustă" 
             desc="Arhitectură bazată pe Repository Pattern și SQLite pentru integritate maximă a datelor." 
           />
@@ -85,7 +85,7 @@ function App() {
       </main>
 
       <footer style={styles.footer}>
-        <span>v1.0.0 — Licență ASE București</span>
+        <span style={{ opacity: 0.6 }}>v1.0.0 — Licență ASE București</span>
       </footer>
     </div>
   );
@@ -106,7 +106,7 @@ const styles = {
     minHeight: '100vh',
     backgroundColor: 'var(--bg)',
     color: 'var(--text-primary)',
-    transition: 'background-color 0.3s ease, color 0.3s ease',
+    transition: 'all 0.3s ease',
     display: 'flex',
     flexDirection: 'column',
   },
@@ -114,98 +114,97 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '16px 40px',
+    padding: '20px 40px',
     backgroundColor: 'var(--surface)',
     borderBottom: '1px solid var(--border)',
   },
   navLogo: {
     display: 'flex',
     alignItems: 'center',
-    gap: '10px',
-  },
-  logoText: {
-    fontWeight: 700,
-    fontSize: '1.1rem',
-    color: 'var(--text-primary)', // Fix: Nu mai ramane alb pe tema Light
+    gap: '12px',
+    fontSize: '1.2rem',
   },
   themeToggle: {
     background: 'none',
     border: '1px solid var(--border)',
     color: 'var(--text-primary)',
-    padding: '6px',
-    borderRadius: '4px',
+    padding: '8px',
+    borderRadius: '6px',
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
+    transition: 'background 0.2s',
   },
   main: {
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '60px 20px',
+    padding: '80px 20px',
   },
   hero: {
     textAlign: 'center',
-    marginBottom: '60px',
-    maxWidth: '750px',
+    marginBottom: '80px',
+    maxWidth: '800px',
   },
   heroTitle: {
-    fontSize: '2.5rem', // Fix: Redus de la 4rem
+    fontSize: '4rem',
     fontWeight: 800,
-    marginBottom: '12px',
-    color: 'var(--text-primary)',
+    marginBottom: '16px',
+    letterSpacing: '-1px',
   },
   heroSubtitle: {
-    fontSize: '1.05rem', // Fix: Redus de la 1.2rem
+    fontSize: '1.2rem',
     color: 'var(--text-secondary)',
-    lineHeight: 1.5,
-    marginBottom: '32px',
+    lineHeight: 1.6,
+    marginBottom: '40px',
   },
   ctaButton: {
     backgroundColor: 'var(--accent)',
     color: 'var(--on-accent)',
-    padding: '12px 24px',
+    padding: '16px 32px',
     borderRadius: '4px',
     fontWeight: 700,
     textDecoration: 'none',
     display: 'inline-flex',
     alignItems: 'center',
-    gap: '10px',
-    fontSize: '0.9rem',
+    gap: '12px',
     textTransform: 'uppercase',
+    letterSpacing: '0.5px',
+    transition: 'background 0.2s',
   },
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '20px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gap: '24px',
     width: '100%',
-    maxWidth: '1000px',
+    maxWidth: '1100px',
   },
   card: {
     backgroundColor: 'var(--surface)',
     border: '1px solid var(--border)',
-    padding: '32px',
-    borderRadius: '4px',
+    padding: '40px',
+    borderRadius: '8px',
+    transition: 'transform 0.2s ease',
   },
   cardIcon: {
     color: 'var(--accent)',
-    marginBottom: '16px',
+    marginBottom: '20px',
   },
   cardTitle: {
-    fontSize: '1.1rem',
-    marginBottom: '8px',
+    fontSize: '1.25rem',
+    marginBottom: '12px',
     fontWeight: 600,
   },
   cardDesc: {
     color: 'var(--text-secondary)',
     lineHeight: 1.5,
-    fontSize: '0.9rem',
+    fontSize: '0.95rem',
   },
   footer: {
-    padding: '24px',
+    padding: '30px',
     textAlign: 'center',
-    fontSize: '0.75rem',
+    fontSize: '0.8rem',
     borderTop: '1px solid var(--border)',
     color: 'var(--text-secondary)',
   }
