@@ -136,10 +136,10 @@ function Nav({ isDark, setIsDark }) {
 function Hero() {
   return (
     <section style={s.hero}>
-      <div style={s.heroBadge}>
+      {/* <div style={s.heroBadge}>
         <Activity size={13} color="var(--accent)" />
         <span>Licență ASE București · 2026</span>
-      </div>
+      </div> */}
 
       <h1 style={s.heroTitle}>
         Gestiune inteligentă<br />
