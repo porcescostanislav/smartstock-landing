@@ -247,7 +247,7 @@ function Footer() {
         />
       <span>SmartStock</span>
       <span style={{ opacity: 0.35 }}>·</span>
-      <span>1.2</span>
+      <span>v1.2</span>
       <span style={{ opacity: 0.35 }}>·</span>
       <span>Licență ASE București 2026</span>
     </footer>
