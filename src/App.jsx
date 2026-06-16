@@ -85,6 +85,15 @@ export default function App() {
   useEffect(() => {
     const root = document.documentElement;
     Object.entries(theme).forEach(([k, v]) => root.style.setProperty(k, v));
+
+    let favicon = document.querySelector("link[rel='icon']");
+    if (!favicon) {
+      favicon = document.createElement('link');
+      favicon.rel = 'icon';
+      favicon.type = 'image/x-icon';
+      document.head.appendChild(favicon);
+    }
+    favicon.href = isDark ? 'icon_dark.ico' : 'icon_light.ico';
   }, [isDark, theme]);
 
   return (
@@ -247,7 +256,7 @@ function Footer() {
         />
       <span>SmartStock</span>
       <span style={{ opacity: 0.35 }}>·</span>
-      <span>v1.2</span>
+      <span>v1.3</span>
       <span style={{ opacity: 0.35 }}>·</span>
       <span>Licență ASE București 2026</span>
     </footer>
